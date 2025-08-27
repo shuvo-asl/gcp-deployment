@@ -23,6 +23,6 @@ jobs:
 
     - name: Deploy files to VM
       run: |
-        rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./ ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }}:/var/www/html/gcp_deployment
+        rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./index.html ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }}:/var/www/html
         # The command above copies all files from the repository to the specified directory on your VM.
-        # Adjust the destination path `/var/www/html/gcp_deployment` as needed.
+        # Adjust the destination path `/var/www/html` as needed.
